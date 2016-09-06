@@ -1,12 +1,22 @@
-var ops = {
-  "==": function(a, b) { return a == b },
-  "!=": function(a, b) { return a != b },
-  "===": function(a, b) { return a === b },
-  "!==": function(a, b) { return a !== b },
-  "<": function(a, b) { return a < b },
-  ">": function(a, b) { return a > b },
-  "<=": function(a, b) { return a <= b },
-  ">=": function(a, b) { return a >= b }
+var opNames = [
+  "==", function(a, b) { return a == b },
+  "!=", function(a, b) { return a != b },
+  "===", function(a, b) { return a === b },
+  "!==", function(a, b) { return a !== b },
+  "<", function(a, b) { return a < b },
+  ">=", function(a, b) { return a >= b },
+  ">", function(a, b) { return a > b },
+  "<=", function(a, b) { return a <= b }
+]
+var ops = {}
+for (var i = 0; i < opNames.length; i += 2) ops[opNames[i]] = opNames[i + 1]
+
+function message(a, b, compare) {
+  if (!compare || typeof compare == "string") {
+    var index = opNames.indexOf(compare || "==")
+    return a + " " + opNames[index + (index % 4 ? -2 : 2)] + " " + b
+  }
+  return "!" + compare.name + "(" + a + ", " + b + ")"
 }
 
 var ist = module.exports = function ist(a, b, compare) {
@@ -21,7 +31,7 @@ var ist = module.exports = function ist(a, b, compare) {
     }
     if (!cmpFn(a, b)) {
       var cmpName = (typeof compare == "string" ? compare : compare && compare.name) || "=="
-      throw new ist.Failure(a + " " + cmpName + " " + b, "ist")
+      throw new ist.Failure(message(a, b, compare), "ist")
     }
   }
 }
