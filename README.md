@@ -1,7 +1,7 @@
 # ist
 
 This is a tiny assertion library (in the same space as
-`require("assert")` that is only a handful of lines, and exports a
+`require("assert")`) that is only a handful of lines, and exports a
 simple API.
 
 ```javascript
