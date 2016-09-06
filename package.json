@@ -1,0 +1,18 @@
+{
+  "name": "ist",
+  "version": "1.0.0",
+  "description": "Mini assertion library",
+  "main": "ist.js",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Marijn Haverbeke",
+      "email": "marijnh@gmail.com",
+      "web": "http://marijnhaverbeke.nl"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/marijnh/ist.git"
+  }
+}
