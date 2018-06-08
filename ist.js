@@ -55,9 +55,10 @@ ist.Failure = function(message, src) {
 ist.Failure.prototype = Object.create(Error.prototype)
 
 ist.throws = function throws(f, expected) {
+  let threw = true
   try {
     f()
-    throw new ist.Failure("Did not throw", "throws")
+    threw = false
   } catch(e) {
     var matches = !expected ? true
         : expected.test ? expected.test(e.message)
@@ -65,4 +66,5 @@ ist.throws = function throws(f, expected) {
         : expected(e)
     if (!matches) throw e
   }
+  if (!threw) throw new ist.Failure("Did not throw", "throws")
 }
