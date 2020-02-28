@@ -19,7 +19,7 @@ function message(a, b, compare) {
   return "!" + compare.name + "(" + a + ", " + b + ")"
 }
 
-var ist = module.exports = function ist(a, b, compare) {
+function ist(a, b, compare) {
   if (arguments.length == 1) {
     if (!a) throw new ist.Failure("!" + a, "ist")
   } else {
@@ -69,4 +69,4 @@ ist.throws = function throws(f, expected) {
   if (!threw) throw new ist.Failure("Did not throw", "throws")
 }
 
-ist.default = ist // Work around ES module bundler issues
+export default ist
