@@ -4,6 +4,7 @@
   "description": "Mini assertion library",
   "main": "ist.cjs.js",
   "module": "ist.js",
+  "types": "ist.d.ts",
   "license": "MIT",
   "maintainers": [
     {
