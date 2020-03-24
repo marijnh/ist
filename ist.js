@@ -69,4 +69,6 @@ ist.throws = function throws(f, expected) {
   if (!threw) throw new ist.Failure("Did not throw", "throws")
 }
 
+ist.default = ist
+
 export default ist
