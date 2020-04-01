@@ -2,7 +2,12 @@
   "name": "ist",
   "version": "1.1.5",
   "description": "Mini assertion library",
-  "main": "ist.cjs.js",
+  "main": "ist.cjs",
+  "type": "module",
+  "exports": {
+    "import": "./ist.js",
+    "require": "./ist.cjs"
+  },
   "module": "ist.js",
   "types": "ist.d.ts",
   "license": "MIT",
@@ -21,6 +26,6 @@
     "tariff": "^0.1.0"
   },
   "scripts": {
-    "prepare": "node build.js > ist.cjs.js"
+    "prepare": "node build.js"
   }
 }
