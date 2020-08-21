@@ -22,7 +22,7 @@
     "type": "git",
     "url": "git://github.com/marijnh/ist.git"
   },
-  "dependencies": {
+  "devDependencies": {
     "tariff": "^0.1.0"
   },
   "scripts": {
