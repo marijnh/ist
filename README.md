@@ -1,3 +1,5 @@
+**This repository has moved to https://code.haverbeke.berlin/marijn/ist**
+
 # ist
 
 This is a tiny assertion library (in the same space as
